@@ -397,7 +397,9 @@ bool GJKSolver::shapeDistance<Capsule, Sphere>(const Capsule& s1,
                                                const Transform3f& tf2,
                                                FCL_REAL& dist, Vec3f& p1,
                                                Vec3f& p2, Vec3f& normal) const {
-  return details::sphereCapsuleDistance(s2, tf2, s1, tf1, dist, p2, p1, normal);
+  bool ret = details::sphereCapsuleDistance(s2, tf2, s1, tf1, dist, p2, p1, normal);
+  normal *= -1;
+  return ret;
 }
 
 template <>

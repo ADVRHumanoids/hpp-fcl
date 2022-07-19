@@ -150,6 +150,7 @@ FCL_REAL ComputeDistance::run(const Transform3f& tf1, const Transform3f& tf2,
 
   if (swap_geoms) {
     res = func(o2, tf2, o1, tf1, &solver, request, result);
+    result.normal *= -1;  // note: is this needed ?
     if (request.enable_nearest_points) {
       std::swap(result.o1, result.o2);
       result.nearest_points[0].swap(result.nearest_points[1]);
