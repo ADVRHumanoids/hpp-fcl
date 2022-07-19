@@ -91,7 +91,7 @@ FCL_REAL ShapeShapeDistance<Sphere, Sphere>(
     result.nearest_points[1] = center1 + abs2 * unit;
 //  }
 
-  result.normal = center1 - center2;
+  result.normal = center2 - center1;
   result.normal.normalize();
   return result.min_distance;
 }
