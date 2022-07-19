@@ -154,7 +154,7 @@ FCL_REAL ShapeShapeDistance<Capsule, Capsule>(
   // witness points achieving the distance between the two segments
   FCL_REAL distance = (w1 - w2).norm();
   const Vec3f normal = (w1 - w2) / distance;
-  result.normal = normal;
+  result.normal = -normal; // note: must point towards o2!
 
   // capsule spcecific distance computation
   distance = distance - (radius1 + radius2);

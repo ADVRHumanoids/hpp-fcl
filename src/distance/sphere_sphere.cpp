@@ -78,18 +78,21 @@ FCL_REAL ShapeShapeDistance<Sphere, Sphere>(
   penetrationDepth = r1 + r2 - dist;
   bool collision = (penetrationDepth >= 0);
   result.min_distance = -penetrationDepth;
-  if (collision) {
-    // Take contact point at the middle of intersection between each sphere
-    // and segment [c1 c2].
-    FCL_REAL abscissa = .5 * r1 + .5 * (dist - r2);
-    Vec3f contact = center1 + abscissa * unit;
-    result.nearest_points[0] = result.nearest_points[1] = contact;
-    return result.min_distance;
-  } else {
+//  if (collision) {
+//    // Take contact point at the middle of intersection between each sphere
+//    // and segment [c1 c2].
+//    FCL_REAL abscissa = .5 * r1 + .5 * (dist - r2);
+//    Vec3f contact = center1 + abscissa * unit;
+//    result.nearest_points[0] = result.nearest_points[1] = contact;
+//    return result.min_distance;
+//  } else {
     FCL_REAL abs1(r1), abs2(dist - r2);
     result.nearest_points[0] = center1 + abs1 * unit;
     result.nearest_points[1] = center1 + abs2 * unit;
-  }
+//  }
+
+  result.normal = center1 - center2;
+  result.normal.normalize();
   return result.min_distance;
 }
 

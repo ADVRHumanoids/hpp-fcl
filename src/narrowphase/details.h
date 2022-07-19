@@ -122,10 +122,11 @@ inline bool sphereCapsuleDistance(const Sphere& s1, const Transform3f& tf1,
   p1 = s_c + normal * s1.radius;
   p2 = segment_point - normal * s2.radius;
 
-  if (dist <= 0) {
-    p1 = p2 = .5 * (p1 + p2);
-    return false;
-  }
+//  if (dist <= 0) {
+//    p1 = p2 = .5 * (p1 + p2);
+//    return false;
+//  }
+
   return true;
 }
 
