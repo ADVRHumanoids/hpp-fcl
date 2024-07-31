@@ -64,6 +64,24 @@
     throw exception(ss.str());                                \
   }
 
+<<<<<<< Updated upstream
+=======
+#ifdef HPP_FCL_TURN_ASSERT_INTO_EXCEPTION
+#define HPP_FCL_ASSERT(check, message, exception) \
+  do {                                            \
+    if (!(check)) {                               \
+      HPP_FCL_THROW_PRETTY(message, exception);   \
+    }                                             \
+  } while (0)
+#else
+#define HPP_FCL_ASSERT(check, message, exception) \
+  {                                               \
+    HPP_FCL_UNUSED_VARIABLE(message);  \
+    assert((check) && message);                   \
+  }
+#endif
+
+>>>>>>> Stashed changes
 #if (__cplusplus >= 201103L || (defined(_MSC_VER) && _MSC_VER >= 1600))
 #define HPP_FCL_WITH_CXX11_SUPPORT
 #endif
