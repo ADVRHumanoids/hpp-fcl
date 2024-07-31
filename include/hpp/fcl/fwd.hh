@@ -81,7 +81,7 @@
 #else
 #define HPP_FCL_ASSERT(check, message, exception) \
   {                                               \
-    HPP_FCL_UNUSED_VARIABLE(exception(message));  \
+    HPP_FCL_UNUSED_VARIABLE(message);  \
     assert((check) && message);                   \
   }
 #endif
