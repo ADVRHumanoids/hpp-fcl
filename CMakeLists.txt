@@ -53,9 +53,6 @@ option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 option(HPP_FCL_TURN_ASSERT_INTO_EXCEPTION "Turn some critical HPP-FCL asserts to exception." FALSE)
 option(HPP_FCL_ENABLE_LOGGING "Activate logging for warnings or error messages. Turned on by default in Debug." FALSE)
 
-option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-
 # Check if the submodule cmake have been initialized
 set(JRL_CMAKE_MODULES "${CMAKE_CURRENT_LIST_DIR}/cmake")
 if(EXISTS "${JRL_CMAKE_MODULES}/base.cmake")
