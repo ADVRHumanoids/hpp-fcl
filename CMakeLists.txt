@@ -188,7 +188,7 @@ if(HPP_FCL_HAS_QHULL)
   endif()
 endif()
 
-ADD_PROJECT_DEPENDENCY(assimp REQUIRED)
+FIND_PACKAGE(assimp REQUIRED)
 
 SET(${PROJECT_NAME}_HEADERS
   include/hpp/fcl/collision_data.h
